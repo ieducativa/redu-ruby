@@ -21,8 +21,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'rake'
 
-  gem.add_runtime_dependency 'faraday', '0.8.4'
-  gem.add_runtime_dependency 'faraday_middleware', '0.9.0'
-  gem.add_runtime_dependency 'oauth2', '0.8.0'
-  gem.add_runtime_dependency 'json'
+  gem.add_runtime_dependency 'faraday', '~> 0.8.4'
+  gem.add_runtime_dependency 'faraday_middleware', '~> 0.9.0'
+  gem.add_runtime_dependency 'oauth2', '~> 0.8.0'
+  gem.add_runtime_dependency 'json', '~> 1.7.6'
+  gem.add_runtime_dependency 'configurable', '~> 1.0.0'
 end
