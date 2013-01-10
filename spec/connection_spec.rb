@@ -5,7 +5,7 @@ module Redu
     let(:connection) { Connection.new(:oauth_token => 'foobar') }
     let(:headers) do
       {'Accept'=>'*/*', 'Authorization'=>'',
-       'Content-Type'=>'application/json', 'Authorization' => "Oauth foobar"}
+       'Content-Type'=>'application/json', 'Authorization' => "OAuth foobar"}
     end
 
     it "should initialize a connection object" do

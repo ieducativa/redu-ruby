@@ -28,7 +28,7 @@ module Redu
         c.request  :url_encoded
         c.use FaradayMiddleware::ParseJson, :content_type => /\bjson$/
         c.adapter  Faraday.default_adapter
-        c.headers = { 'Authorization' => "Oauth #{oauth_token}",
+        c.headers = { 'Authorization' => "OAuth #{oauth_token}",
                       'Content-type' => 'application/json' }
       end
     end
