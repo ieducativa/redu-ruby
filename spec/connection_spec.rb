@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'json'
 
 module Redu
   describe Connection do
