@@ -12,7 +12,7 @@ module Redu
 
     before do
       stub_request(:get, "http://redu.com.br/api/spaces/1").
-        with(headers: headers).
+        with(headers => headers).
         to_return(:status => 200, :body => JSON.generate(space_repr),
                   :headers => {'Content-type' => 'application/json'})
     end

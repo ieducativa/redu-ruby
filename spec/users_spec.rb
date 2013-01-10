@@ -13,7 +13,7 @@ module Redu
 
     before do
       stub_request(:get, "http://redu.com.br/me").
-        with(headers: headers).
+        with(headers => headers).
         to_return(:status => 200, :body => JSON.generate(user_repr),
                   :headers => {'Content-type' => 'application/json'})
     end
