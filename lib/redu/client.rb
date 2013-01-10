@@ -1,9 +1,13 @@
 require 'redu/api/users'
+require 'redu/api/spaces'
+require 'redu/entity'
 require 'redu/user'
+require 'redu/space'
 
 module Redu
   class Client
     include Api::Users
+    include Api::Spaces
 
     attr_reader :consumer_key, :consumer_secret, :oauth_token, :oauth_token_secret
 

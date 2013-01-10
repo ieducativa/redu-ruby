@@ -1,7 +1,5 @@
 module Redu
-  class User
-    include Virtus
-
+  class User < Entity
     attribute :id, Integer
     attribute :first_name, String
     attribute :last_name, String
