@@ -4,7 +4,7 @@ module Redu
   describe Connection do
     let(:connection) { Connection.new }
     let(:headers) { {'Accept'=>'*/*', 'Authorization'=>'',
-                     'Content-Type'=>'application/json', 'User-Agent'=>'Ruby'} }
+                     'Content-Type'=>'application/json'} }
     it "should initialize a connection object" do
       Connection.new.should be_a Connection
     end
