@@ -14,4 +14,5 @@ module Redu
   end
 end
 
-require "redu/connection"
+require 'redu/connection'
+require 'redu/client'
