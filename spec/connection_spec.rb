@@ -2,9 +2,12 @@ require 'spec_helper'
 
 module Redu
   describe Connection do
-    let(:connection) { Connection.new }
-    let(:headers) { {'Accept'=>'*/*', 'Authorization'=>'',
-                     'Content-Type'=>'application/json'} }
+    let(:connection) { Connection.new(:oauth_token => 'foobar') }
+    let(:headers) do
+      {'Accept'=>'*/*', 'Authorization'=>'',
+       'Content-Type'=>'application/json', 'Authorization' => "Oauth foobar"}
+    end
+
     it "should initialize a connection object" do
       Connection.new.should be_a Connection
     end
