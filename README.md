@@ -1,4 +1,4 @@
-# Redu
+# Redu [![Build Status](https://travis-ci.org/redu/redu-ruby.png?branch=master)](https://travis-ci.org/redu/redu-ruby)
 
 TODO: Write a gem description
 
