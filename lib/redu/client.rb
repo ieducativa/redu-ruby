@@ -1,5 +1,10 @@
+require 'redu/api/users'
+require 'redu/user'
+
 module Redu
   class Client
+    include Api::Users
+
     attr_reader :consumer_key, :consumer_secret, :oauth_token, :oauth_token_secret
 
     def initialize(opts={})

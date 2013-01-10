@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'virtus'
 
 require 'redu/version'
 require 'redu/configuration'
