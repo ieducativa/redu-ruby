@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'json'
 
 module Redu
   describe Connection do
@@ -32,6 +33,20 @@ module Redu
         it "should return a Response object when calling ##{method}" do
           connection.send(method, 'foo/bar').should be_a Faraday::Response
         end
+      end
+    end
+
+    context "the response" do
+      it "should contain a representation of returned JSON" do
+        user = { "login" => "guiocavalcanti", "first_name" => "Guilherme",
+                 "id" => 12, "last_name" => "Cavalcanti" }
+
+        stub_request(:get, "http://redu.com.br/api/foo/bar").
+          with(:headers => headers).
+          to_return(:status => 200, :body => JSON.generate(user),
+                    :headers => { 'Content-Type' => 'application/json' })
+
+        connection.get('foo/bar').body.to_a.sort.should == user.to_a.sort
       end
     end
   end
