@@ -1,6 +1,5 @@
 module Redu
   class User < Entity
-    attribute :id, Integer
     attribute :first_name, String
     attribute :last_name, String
     attribute :login, String
