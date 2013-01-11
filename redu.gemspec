@@ -32,4 +32,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'json', '~> 1.7.6'
   gem.add_runtime_dependency 'configurable', '~> 1.0.0'
   gem.add_runtime_dependency 'virtus', '~> 0.5.4'
+  if RUBY_VERSION < "1.9"
+    gem.add_development_dependency "system_timer"
+  end
 end
