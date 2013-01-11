@@ -4,8 +4,8 @@ module Redu
   describe Connection do
     let(:connection) { Connection.new(:oauth_token => 'foobar') }
     let(:headers) do
-      {'Accept'=>'*/*', 'Authorization'=>'',
-       'Content-Type'=>'application/json', 'Authorization' => "OAuth foobar"}
+      {'Accept'=>'*/*', 'Content-Type'=>'application/json',
+       'Authorization' => "OAuth foobar", 'User-Agent'=>'Ruby'}
     end
 
     it "should initialize a connection object" do
@@ -35,6 +35,17 @@ module Redu
         it "should return a Response object when calling ##{method}" do
           connection.send(method, 'foo/bar').should be_a Faraday::Response
         end
+      end
+    end
+
+    context "querystring" do
+      it "should make the request with the querystring" do
+        s = stub_request(:get, "http://redu.com.br/api/foo/bar").
+          with(:headers => headers, :query => { :foo => :bar }).
+          to_return(:status => 200, :body => "", :headers => {})
+
+        connection.get('foo/bar', :foo => :bar)
+        s.should have_been_requested
       end
     end
 
