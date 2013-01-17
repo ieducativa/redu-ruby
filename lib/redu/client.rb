@@ -6,6 +6,7 @@ require 'redu/entity'
 require 'redu/user'
 require 'redu/space'
 require 'redu/subject'
+require 'redu/course'
 
 module Redu
   class Client
