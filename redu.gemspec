@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Redu::VERSION
   gem.authors       = ["Guilherme Cavalcanti"]
   gem.email         = ["guiocavalcanti@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "Wrapper for Redu REST API"
+  gem.summary       = "This gem provides both authentication and access to Redu (http://redu.com.br) REST API."
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
