@@ -32,7 +32,7 @@ module Redu
 
     context "#create_subject" do
       before do
-        stub_request(:post, "http://redu.com.br/api/spaces/1/subject").
+        stub_request(:post, "http://redu.com.br/api/spaces/1/subjects").
           with(headers => headers).
           to_return(:status => 201, :body => JSON.generate(subject_repr),
                     :headers => {'Content-type' => 'application/json'})
