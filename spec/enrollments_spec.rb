@@ -5,10 +5,10 @@ module Redu
     subject { Client.new }
     let(:enrollment_repr) do
       {
-        role: "member",
-        links: [],
-        state: "approved",
-        id: 1,
+        :role => "member",
+        :links => [],
+        :state => "approved",
+        :id => 1,
       }
     end
     let(:headers) do
