@@ -20,11 +20,69 @@ Ou instale o gem utilizando:
 
 ## Uso
 
-TODO: Write usage instructions here
+Inicialize um cliente passando o *access token* do OAuth:
+
+```ruby
+client = Redu::Client.new(oauth_token: 'xyz')
+me = client.me
+puts me.first_name
+# => 'Guilherme'
+```
+
+### Pegando amigos do usuário
+
+```ruby
+me = client.me
+friends = me.friends.select(&:first_name)
+puts friends
+# => ['André', 'Juliana', 'Anderson']
+```
+
+### Postando no mural do usuário
+
+```ruby
+me = client.me
+me.statuses.create(text: 'Hello World!')
+me.statuses.last.text
+# => 'Hello World!'
+```
+
+### Visualizando primeira aula da disciplina 12
+
+```ruby
+me = client.me
+space = me.spaces.fetch(id: 12)
+lecture = space.lectures.first
+puts lecture.type, lecture.raw
+# => 'Page'
+# => 'Conteúdo da aula...'
+```
+
+### Respondendo um post do mural
+
+```ruby
+me = client.me
+last_status = me.statuses.last
+puts last_status
+# => 'Alguém está sem grupo para o trabalho de matemática?'
+last_status.answer(text: 'Eu! Vamos fazer uma equipe?')
+puts last_status.anwers.first
+# => 'Eu! Vamos fazer uma equipe?'
+```
+
+### Pegando Disciplinas do usuário
+
+```ruby
+user = client.me
+# Todas as disciplinas que o usuário faz parte
+spaces = user.spaces
+# Todas as disciplinas onde o usuário é professor
+teaching_spaces = user.spaces(role: :teacher)
+```
 
 ## Contribuindo
 
-1. Forke o projeto
+1. Faça fork do projeto
 2. Crie um novo branch (`git checkout -b my-new-feature`)
 3. Realize seus commits (`git commit -am 'Add some feature'`)
 4. Dê push nas modificações (`git push origin my-new-feature`)
