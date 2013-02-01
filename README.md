@@ -1,32 +1,34 @@
 # Redu [![Build Status](https://travis-ci.org/redu/redu-ruby.png?branch=master)](https://travis-ci.org/redu/redu-ruby) [![Dependency Status](https://gemnasium.com/redu/redu-ruby.png)](https://gemnasium.com/redu/redu-ruby)
 
-TODO: Write a gem description
+Redu Ruby é um encpsulador para da API REST do Redu escrito em Ruby. Seu principal objetivo é abstrair a lógica de comunicaçào HTTP entre os clientes e a API do Redu.
 
-## Installation
+O Redu é uma plataforma de ensino a distância construída sobre uma rede social.
 
-Add this line to your application's Gemfile:
+## Instalação
+
+Adicione esta linha ao seu Gemfile:
 
     gem 'redu'
 
-And then execute:
+E execute:
 
     $ bundle
 
-Or install it yourself as:
+Ou instale o gem utilizando:
 
     $ gem install redu
 
-## Usage
+## Uso
 
 TODO: Write usage instructions here
 
-## Contributing
+## Contribuindo
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Forke o projeto
+2. Crie um novo branch (`git checkout -b my-new-feature`)
+3. Realize seus commits (`git commit -am 'Add some feature'`)
+4. Dê push nas modificações (`git push origin my-new-feature`)
+5. Envie um pull request
 
 <img src="https://github.com/downloads/redu/redupy/redutech-marca.png" alt="Redu Educational Technologies" width="300">
 
