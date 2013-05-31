@@ -23,7 +23,7 @@ Ou instale o gem utilizando:
 Inicialize um cliente passando o *access token* do OAuth:
 
 ```ruby
-client = Redu::Client.new(oauth_token: 'xyz')
+client = Redu::Client.new(oauth_token_secret: 'xyz')
 me = client.me
 puts me.first_name
 # => 'Guilherme'
