@@ -1,5 +1,5 @@
 module Redu
-  class LinkParser
+  class LinkCollection
     include Enumerable
 
     def initialize(links)

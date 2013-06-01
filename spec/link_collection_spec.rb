@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Redu
-  describe LinkParser do
+  describe LinkCollection do
     let(:links) do
       [
         { "rel" => "self", "href" => "http://www.redu.com.br/api/subjects/4723" },
@@ -11,7 +11,7 @@ module Redu
       ]
     end
 
-    subject { LinkParser.new(links) }
+    subject { LinkCollection.new(links) }
 
     it "should parse the request relationship" do
       subject.parse(:space).href.should == links[2]["href"]
