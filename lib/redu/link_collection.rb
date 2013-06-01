@@ -2,29 +2,27 @@ module Redu
   class LinkCollection
     include Enumerable
 
-    def initialize(links)
-      @raw_links = links
+    def initialize(options={})
+      @raw_links = options[:items]
+      @parser_class = options[:parser] || LinkParser
     end
 
-    def parse(relationship)
-      raw_link = raw_link(relationship)
-      Link.new(raw_link)
+    def fetch(relationship)
+      find { |i| i.rel == relationship.to_s }
     end
 
     def each(&block)
-      links.each(&block)
+      items.each(&block)
     end
 
     private
 
-    def items
-      @links ||= @raw_links.map { |raw_link| Link.new(raw_link) }
+    def parser_builder
+      @parser ||= @parser_class.new(@raw_links)
     end
 
-    def raw_link(relationship)
-      @raw_links.select do |link|
-        link["rel"] == relationship.to_s
-      end.first
+    def items
+      @items ||= parser_builder.parse
     end
   end
 end
