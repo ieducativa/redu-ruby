@@ -7,5 +7,10 @@ module Redu
     def href
       @link["href"]
     end
+
+    def relationship
+      @link["rel"]
+    end
+    alias_method :rel, :relationship
   end
 end
