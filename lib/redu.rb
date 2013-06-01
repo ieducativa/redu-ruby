@@ -6,6 +6,8 @@ require 'redu/version'
 require 'redu/configuration'
 require 'redu/connection'
 require 'redu/client'
+require 'redu/link'
+require 'redu/link_parser'
 
 module Redu
   class << self
