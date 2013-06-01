@@ -26,19 +26,19 @@ module Redu
       end
 
       it "should return a Enrollment" do
-        subject.enrollment(1).should be_a Enrollment
+        expect(subject.enrollment(1)).to be_a Enrollment
       end
 
       it "should have the correct attributes" do
         enrollment = subject.enrollment(1)
         enrollment_repr.each do |k,v|
-          enrollment.send(:"#{k}").should == v
+          expect(enrollment.send(:"#{k}")).to eq v
         end
       end
 
       it "should generate the correct request" do
         subject.enrollment(1)
-        request_stub.should have_been_requested
+        expect(request_stub).to have_been_requested
       end
     end
 

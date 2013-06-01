@@ -6,7 +6,7 @@ module Redu
     %w(consumer_key consumer_secret oauth_token oauth_token_secret).each do |c|
       it "should set/get #{c}" do
         subject.send(:"#{c}=", 'foo')
-        subject.send(:"#{c}").should == 'foo'
+        expect(subject.send(:"#{c}")).to eq 'foo'
       end
     end
   end

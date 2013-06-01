@@ -19,13 +19,13 @@ module Redu
 
     context "#space" do
       it "should return a Space" do
-        subject.space(1).should be_a Space
+        expect(subject.space(1)).to be_a Space
       end
 
       it "should have the correct attributes" do
         space = subject.space(1)
         space_repr.each do |k,v|
-          space.send(:"#{k}").should == v
+          expect(space.send(:"#{k}")).to eq v
         end
       end
     end

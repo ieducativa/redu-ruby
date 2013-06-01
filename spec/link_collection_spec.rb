@@ -19,20 +19,20 @@ module Redu
     subject { LinkCollection.new(:items => links) }
 
     it "should fetch the request relationship" do
-      subject.fetch(:space).href.should == links[2]["href"]
+      expect(subject.fetch(:space).href).to eq links[2]["href"]
     end
 
     it "should return nil if the link don't exist" do
-      subject.fetch(:environment).should be_nil
+      expect(subject.fetch(:environment)).to be_nil
     end
 
     it "should return a link" do
-      subject.fetch(:space).should be_a Link
+      expect(subject.fetch(:space)).to be_a Link
     end
 
     it "should be a enumerable" do
-      subject.should be_a Enumerable
-      subject.should respond_to(:each)
+      expect(subject).to be_a Enumerable
+      expect(subject).to respond_to(:each)
     end
   end
 end

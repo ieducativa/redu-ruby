@@ -19,13 +19,13 @@ module Redu
       end
 
       it "should return a Subject" do
-        subject.subject(1).should be_a Subject
+        expect(subject.subject(1)).to be_a Subject
       end
 
       it "should have the correct attributes" do
         subj = subject.subject(1)
         subject_repr.each do |k,v|
-          subj.send(:"#{k}").should == v
+          expect(subj.send(:"#{k}")).to eq v
         end
       end
     end
@@ -40,8 +40,9 @@ module Redu
 
       context "with hash" do
         it "should return a Subject" do
-          subject.create_subject(:space_id => 1, :subject => { :name => 'Lorem' }).
-            should be_a Subject
+          subj = subject.
+            create_subject(:space_id => 1, :subject => { :name => 'Lorem' })
+          expect(subj).to be_a Subject
         end
       end
     end

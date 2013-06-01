@@ -8,24 +8,24 @@ module Redu
     subject { Link.new(link) }
 
     it "should return the href" do
-      subject.href.should == link["href"]
+      expect(subject.href).to eq link["href"]
     end
 
     it "should return the relationship" do
-      subject.relationship.should == link["rel"]
+      expect(subject.relationship).to eq link["rel"]
     end
 
     it "should alias #rel to #relationship" do
-      subject.rel.should == subject.relationship
+      expect(subject.rel).to eq subject.relationship
     end
 
     context "==" do
       it "should return true when the objects have the same rel and href" do
-        subject.should == Link.new(link)
+        expect(subject).to eq Link.new(link)
       end
 
       it "should return false otherwise" do
-        subject.should_not == Link.new({})
+        expect(subject).to_not eq Link.new({})
       end
     end
   end
