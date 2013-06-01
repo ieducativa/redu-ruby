@@ -18,5 +18,15 @@ module Redu
     it "should alias #rel to #relationship" do
       subject.rel.should == subject.relationship
     end
+
+    context "==" do
+      it "should return true when the objects have the same rel and href" do
+        subject.should == Link.new(link)
+      end
+
+      it "should return false otherwise" do
+        subject.should_not == Link.new({})
+      end
+    end
   end
 end

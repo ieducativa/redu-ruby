@@ -12,5 +12,9 @@ module Redu
       @link["rel"]
     end
     alias_method :rel, :relationship
+
+    def ==(other)
+      self.href == other.href && self.rel == other.rel
+    end
   end
 end
