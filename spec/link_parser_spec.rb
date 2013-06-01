@@ -24,5 +24,10 @@ module Redu
     it "should return a link" do
       subject.parse(:space).should be_a Link
     end
+
+    it "should be a enumerable" do
+      subject.should be_a Enumerable
+      subject.should respond_to(:each)
+    end
   end
 end
