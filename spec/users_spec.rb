@@ -3,10 +3,7 @@ require 'spec_helper'
 module Redu
   describe 'Api::Users' do
     subject { Client.new }
-    let(:user_repr) do
-      { "login" => "guiocavalcanti", "first_name" => "Guilherme", "id" => 12,
-        "last_name" => "Cavalcanti" }
-    end
+    let(:user_repr) { parse_json(File.open('spec/fixtures/user.json')) }
     let(:headers) do
       {'Content-Type'=>'application/json'}
     end
@@ -23,10 +20,10 @@ module Redu
         expect(subject.me).to be_a User
       end
 
-      it "should have the correct attributes" do
-        user = subject.me
-        user_repr.each do |k,v|
-          expect(user.send(:"#{k}")).to eq v
+      %w(login email first_name last_name description favorite_quotation  friends_count mobile localization birth_localization interested_areas).each do |attr|
+        it "should have #{attr} string attribute" do
+          user = subject.me
+          expect(user.send(:"#{attr}")).to eq user_repr[attr]
         end
       end
     end

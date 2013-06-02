@@ -20,6 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.14.rc1'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'json_spec'
   if RUBY_VERSION < "1.9"
     gem.add_development_dependency "ruby-debug"
   else
