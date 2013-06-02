@@ -1,17 +1,11 @@
 module Redu
   class Link
-    def initialize(raw_link)
-      @link = raw_link || {}
-    end
+    include Virtus
 
-    def href
-      @link["href"]
-    end
+    attribute :href, String
+    attribute :rel, String
 
-    def relationship
-      @link["rel"]
-    end
-    alias_method :rel, :relationship
+    alias_method :relationship, :rel
 
     def ==(other)
       self.href == other.href && self.rel == other.rel
