@@ -11,8 +11,6 @@ module Redu
     attribute :description, String
     attribute :favorite_quotation, String
     attribute :birthday, Date
-    attribute :created_at, DateTime
-    attribute :updated_at, DateTime
     attribute :birth_localization, String
     attribute :mobile, String
     attribute :interested_areas, Array[String]

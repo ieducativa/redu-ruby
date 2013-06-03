@@ -4,12 +4,7 @@ module Redu
   describe 'Api::Enrollments' do
     subject { Client.new }
     let(:enrollment_repr) do
-      {
-        :role => "member",
-        :links => [],
-        :state => "approved",
-        :id => 1,
-      }
+      parse_json(File.open("spec/fixtures/enrollment.json"))
     end
     let(:headers) do
       {'Content-Type'=>'application/json'}
@@ -31,7 +26,7 @@ module Redu
 
       it "should have the correct attributes" do
         enrollment = subject.enrollment(1)
-        enrollment_repr.each do |k,v|
+        enrollment_repr.except(:created_at, :updated_at).each do |k,v|
           expect(enrollment.send(:"#{k}")).to eq v
         end
       end

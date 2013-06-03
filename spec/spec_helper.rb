@@ -10,6 +10,16 @@ require 'webmock/rspec'
 require 'json'
 require 'json_spec'
 
+class Hash
+  def except(*keys)
+    dup.select { |key, _| keys.include?(key) }
+  end
+
+  def slice(*keys)
+    dup.reject { |key, _| keys.include?(key) }
+  end
+end
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true

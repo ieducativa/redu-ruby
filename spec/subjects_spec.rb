@@ -3,9 +3,7 @@ require 'spec_helper'
 module Redu
   describe 'Api::Spaces' do
     subject { Client.new }
-    let(:subject_repr) do
-      { "id" => 1, "name" => "Lorem", "id" => 12, "description" => "Lorem" }
-    end
+    let(:subject_repr) { parse_json(File.open("spec/fixtures/subject.json")) }
     let(:headers) do
       {'Content-Type'=>'application/json'}
     end
@@ -24,7 +22,7 @@ module Redu
 
       it "should have the correct attributes" do
         subj = subject.subject(1)
-        subject_repr.each do |k,v|
+        subject_repr.except(:created_at, :updated_at).each do |k,v|
           expect(subj.send(:"#{k}")).to eq v
         end
       end

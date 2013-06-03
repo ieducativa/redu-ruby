@@ -1,0 +1,29 @@
+{
+  "id": 4171,
+  "name": "3. Acentuação",
+  "description": "Lorem",
+  "created_at": "2013-04-09T00:35:45-03:00",
+  "updated_at": "2013-04-09T10:49:52-03:00",
+  "links": [
+  {
+    "rel": "self",
+    "href": "http://www.redu.com.br/api/subjects/4171"
+  },
+  {
+    "rel": "lectures",
+    "href": "http://www.redu.com.br/api/subjects/4171/lectures"
+  },
+  {
+    "rel": "space",
+    "href": "http://www.redu.com.br/api/courses/2892"
+  },
+  {
+    "rel": "course",
+    "href": "http://www.redu.com.br/api/courses/mooc-lp"
+  },
+  {
+    "rel": "environment",
+    "href": "http://www.redu.com.br/api/environments/moocs"
+  }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "state": "approved",
+  "id": 5939,
+  "created_at": "2012-04-09T20:01:19-03:00",
+  "updated_at": "2013-06-01T21:01:14-03:00",
+  "role": "member",
+  "links": [
+  {
+    "rel": "self",
+    "href": "http://www.redu.com.br/api/enrollments/5939"
+  },
+  {
+    "rel": "course",
+    "href": "http://www.redu.com.br/api/courses/recife"
+  },
+  {
+    "rel": "environment",
+    "href": "http://www.redu.com.br/api/environments/www"
+  },
+  {
+    "rel": "user",
+    "href": "http://www.redu.com.br/api/users/guiocavalcanti"
+  }
+  ]
+}
