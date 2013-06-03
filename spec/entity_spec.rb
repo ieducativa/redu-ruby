@@ -27,10 +27,6 @@ module Redu
       it "should return a LinkCollection" do
         expect(subject.links).to be_a LinkCollection
       end
-
-      it "should enable link lookup" do
-        expect(subject.links.fetch(:self).href).to eq links[0]["href"]
-      end
     end
   end
 end
