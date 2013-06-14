@@ -2,6 +2,7 @@ require 'redu/api/users'
 require 'redu/api/spaces'
 require 'redu/api/subjects'
 require 'redu/api/enrollments'
+require 'redu/api/lectures'
 
 require 'redu/link'
 require 'redu/link_parser'
@@ -12,6 +13,7 @@ require 'redu/space'
 require 'redu/subject'
 require 'redu/course'
 require 'redu/enrollment'
+require 'redu/lecture'
 
 module Redu
   class Client
@@ -19,6 +21,7 @@ module Redu
     include Api::Spaces
     include Api::Subjects
     include Api::Enrollments
+    include Api::Lectures
 
     attr_reader :consumer_key, :consumer_secret, :oauth_token, :oauth_token_secret
 

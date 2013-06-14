@@ -80,6 +80,21 @@ spaces = user.spaces
 teaching_spaces = user.spaces(role: :teacher)
 ```
 
+### Criando Aulas
+
+#### Canvas
+
+```ruby
+params = {
+  lecture: {
+    type: 'Canvas',
+    name: 'Super duper',
+    current_url: 'http://myapp.canvas/1'
+  }
+}
+client.create_lecture(subject_id: 12, params)
+```
+
 ## Contribuindo
 
 1. Faça fork do projeto
