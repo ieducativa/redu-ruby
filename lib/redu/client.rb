@@ -33,7 +33,7 @@ module Redu
     end
 
     def connection
-      @connection ||= Connection.new(:oauth_token => oauth_token_secret)
+      @connection ||= Connection.new(oauth_token: oauth_token_secret)
     end
   end
 end

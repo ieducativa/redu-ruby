@@ -8,7 +8,7 @@ module Redu
     attribute :updated_at, DateTime
 
     def links
-      LinkCollection.new(:items => @links)
+      LinkCollection.new(items: @links)
     end
   end
 end

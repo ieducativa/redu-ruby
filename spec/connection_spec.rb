@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Redu
   describe Connection do
-    let(:connection) { Connection.new(:oauth_token => 'foobar') }
+    let(:connection) { Connection.new(oauth_token: 'foobar') }
     let(:headers) do
       {'Accept'=>'*/*', 'Content-Type'=>'application/json',
        'Authorization' => "OAuth foobar"}
@@ -20,15 +20,15 @@ module Redu
       context do
         before do
           stub_request(method.to_sym, "http://redu.com.br/api/foo/bar").
-            with(:headers => headers).to_return(:status => 200, :body => "",
-                                                :headers => {})
+            with(headers: headers).to_return(status: 200, body: "",
+                                                headers: {})
 
         end
 
         it "should issue a #{method.upcase} request when calling ##{method}" do
           connection.send(method, 'foo/bar')
           request = a_request(method.to_sym, "http://redu.com.br/api/foo/bar").
-            with(:headers => {'Content-type'=>'application/json'})
+            with(headers: {'Content-type'=>'application/json'})
           expect(request).to have_been_made
         end
 
@@ -41,10 +41,10 @@ module Redu
     context "querystring" do
       it "should make the request with the querystring" do
         s = stub_request(:get, "http://redu.com.br/api/foo/bar").
-          with(:headers => headers, :query => { :foo => :bar }).
-          to_return(:status => 200, :body => "", :headers => {})
+          with(headers: headers, query: { foo: :bar }).
+          to_return(status: 200, body: "", headers: {})
 
-        connection.get('foo/bar', :foo => :bar)
+        connection.get('foo/bar', foo: :bar)
         expect(s).to have_been_requested
       end
     end
@@ -55,9 +55,9 @@ module Redu
                  "id" => 12, "last_name" => "Cavalcanti" }
 
         stub_request(:get, "http://redu.com.br/api/foo/bar").
-          with(:headers => headers).
-          to_return(:status => 200, :body => JSON.generate(user),
-                    :headers => { 'Content-Type' => 'application/json' })
+          with(headers: headers).
+          to_return(status: 200, body: JSON.generate(user),
+                    headers: { 'Content-Type' => 'application/json' })
 
         expect(connection.get('foo/bar').body.to_a.sort).to eq user.to_a.sort
       end

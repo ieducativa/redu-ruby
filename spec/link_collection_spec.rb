@@ -16,7 +16,7 @@ module Redu
     end
 
     let(:parser) { LinkParser }
-    subject { LinkCollection.new(:items => links) }
+    subject { LinkCollection.new(items: links) }
 
     it "should fetch the request relationship" do
       expect(subject.fetch(:space).href).to eq links[2]["href"]

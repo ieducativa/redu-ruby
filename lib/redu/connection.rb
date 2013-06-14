@@ -24,9 +24,9 @@ module Redu
     protected
 
     def connection
-      @connection ||= Faraday.new(:url => 'http://redu.com.br/api/') do |c|
+      @connection ||= Faraday.new(url: 'http://redu.com.br/api/') do |c|
         c.request  :json
-        c.use FaradayMiddleware::ParseJson, :content_type => /\bjson$/
+        c.use FaradayMiddleware::ParseJson, content_type: /\bjson$/
         c.adapter  Faraday.default_adapter
         c.headers = { 'Authorization' => "OAuth #{oauth_token}",
                       'Content-type' => 'application/json' }

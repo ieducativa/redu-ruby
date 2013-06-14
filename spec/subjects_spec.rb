@@ -12,8 +12,8 @@ module Redu
       before do
         stub_request(:get, "http://redu.com.br/api/subjects/1").
           with(headers => headers).
-          to_return(:status => 200, :body => JSON.generate(subject_repr),
-                    :headers => {'Content-type' => 'application/json'})
+          to_return(status: 200, body: JSON.generate(subject_repr),
+                    headers: {'Content-type' => 'application/json'})
       end
 
       it "should return a Subject" do
@@ -32,14 +32,14 @@ module Redu
       before do
         stub_request(:post, "http://redu.com.br/api/spaces/1/subjects").
           with(headers => headers).
-          to_return(:status => 201, :body => JSON.generate(subject_repr),
-                    :headers => {'Content-type' => 'application/json'})
+          to_return(status: 201, body: JSON.generate(subject_repr),
+                    headers: {'Content-type' => 'application/json'})
       end
 
       context "with hash" do
         it "should return a Subject" do
           subj = subject.
-            create_subject(:space_id => 1, :subject => { :name => 'Lorem' })
+            create_subject(space_id: 1, subject: { name: 'Lorem' })
           expect(subj).to be_a Subject
         end
       end

@@ -16,8 +16,8 @@ module Redu
       end
       before do
           request_stub.with(headers => headers).
-          to_return(:status => 200, :body => JSON.generate(enrollment_repr),
-                    :headers => {'Content-type' => 'application/json'})
+          to_return(status: 200, body: JSON.generate(enrollment_repr),
+                    headers: {'Content-type' => 'application/json'})
       end
 
       it "should return a Enrollment" do
