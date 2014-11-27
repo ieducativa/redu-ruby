@@ -1,6 +1,6 @@
 # Redu [![Build Status](https://travis-ci.org/redu/redu-ruby.png?branch=master)](https://travis-ci.org/redu/redu-ruby) [![Dependency Status](https://gemnasium.com/redu/redu-ruby.png)](https://gemnasium.com/redu/redu-ruby)
 
-Redu Ruby é um encpsulador para da API REST do Redu escrito em Ruby. Seu principal objetivo é abstrair a lógica de comunicaçào HTTP entre os clientes e a API do Redu.
+Redu Ruby é um encapsulador para da API REST do Redu escrito em Ruby. Seu principal objetivo é abstrair a lógica de comunicaçào HTTP entre os clientes e a API do Redu.
 
 O Redu é uma plataforma de ensino a distância construída sobre uma rede social.
 
